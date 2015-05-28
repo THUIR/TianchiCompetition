@@ -36,8 +36,9 @@ if __name__ == '__main__':
     taobao_day_map = load_map_items(load_items(data_dir + "/mfd_day_share_interest.csv", "TaobaoDayItem"))
     bank_day_map = load_map_items(load_items(data_dir + "/mfd_bank_shibor.csv", "BankDayItem"))
 
-    pr_map = build_purchase_redeem_map(data_begin_date, data_end_date, user_day_item_list)
+    #pr_map = build_purchase_redeem_map(data_begin_date, data_end_date, user_day_item_list)
     #save_map(pr_map, ["date", "total_purchase", "total_redeem"], data_dir + "/wc_total_pr.csv")
+    pr_map = load_map_list(data_dir + "/wc_total_pr.csv")
 
     data_container = DataContainer(user_day_item_list, pr_map, user_profile_map, taobao_day_map, bank_day_map)
 
@@ -49,9 +50,9 @@ if __name__ == '__main__':
         #wc_test_model(data_container, "NaivePredictor", test_begin_date, day_length)
         #wc_test_model(data_container, "SimpleRegressionPredictor", test_begin_date, day_length)
         #wc_test_model(data_container, "EqualFeatureRegressionPredictor", test_begin_date, day_length, data_dir + "/test_efr_" + test_begin_date +".txt")
-        #wc_test_model(data_container, "SimpleAssemblePredictor", test_begin_date, day_length, data_dir + "/test_sa_i6_" + test_begin_date +".txt")
-        #wc_test_model(data_container, "FrequencyRegressionPredictor", test_begin_date, day_length, data_dir + "/test_frp_" + test_begin_date +".txt")
-        wc_test_model(data_container, "ExponentialSmoothingPredictor", test_begin_date, day_length, data_dir + "/test_esp_e_" + test_begin_date +".txt")
+        #wc_test_model(data_container, "SimpleAssemblePredictor", test_begin_date, day_length, data_dir + "/test_sa_w_" + test_begin_date +".txt")
+        #wc_test_model(data_container, "FrequencyRegressionPredictor", test_begin_date, day_length, data_dir + "/test_frp_m_" + test_begin_date +".txt")
+        #wc_test_model(data_container, "ExponentialSmoothingPredictor", test_begin_date, day_length, data_dir + "/test_esp_e_" + test_begin_date +".txt")
         #wc_test_model(data_container, "HoltMethodPredictor", test_begin_date, day_length, data_dir + "/test_hmp_mape_" + test_begin_date +".txt")
         #wc_test_model(data_container, "HoltWintersPredictor", test_begin_date, day_length, data_dir + "/test_hwp_i" + test_begin_date +".txt")
         test_begin_date = add_month(test_begin_date, -1)
@@ -59,4 +60,4 @@ if __name__ == '__main__':
     use_predict_begin_date = "20140901"
     #wc_use_model(data_container, "SimpleRegressionPredictor", use_predict_begin_date, day_length, data_dir + "/wc_simple_regression_prediction2.csv")
     #wc_use_model(data_container, "EqualFeatureRegressionPredictor", use_predict_begin_date, day_length, data_dir + "/wc_EqualFeatureRegressionPredictor.csv")
-    #wc_use_model(data_container, "SimpleAssemblePredictor", use_predict_begin_date, day_length, data_dir + "/wc_SimpleAssemblePredictor.csv")
+    wc_use_model(data_container, "SimpleAssemblePredictor", use_predict_begin_date, day_length, data_dir + "/wc_SimpleAssemblePredictor_i.csv")

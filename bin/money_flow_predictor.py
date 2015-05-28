@@ -10,6 +10,8 @@ from sklearn.linear_model import Lasso
 
 from sklearn import svm
 
+from wc_ml_model import WCMultilayerPerceptron
+
 
 
 
@@ -20,6 +22,19 @@ class DataContainer():
         self.user_profile_map = up_map
         self.taobao_day_map = td_map
         self.bank_day_map = bd_map
+        self.user_action_map = None
+        self.user_list = None
+        self.generate_user_action_map()
+
+    def generate_user_action_map(self):
+        if not self.user_action_map:
+            self.user_action_map = {}
+            for item in self.user_day_item_list:
+                uid = int(item.user_id)
+                if not self.user_action_map.has_key(item.user_id):
+                    self.user_action_map[uid] = {}
+                self.user_action_map[uid][item.report_date] = item
+            self.user_list = sorted(self.user_action_map.keys(), key=lambda x: x, reverse=False)
 
 class Predictor():
     def __init__(self, data_container):
@@ -113,10 +128,12 @@ class NaivePredictor(Predictor):
         return predict_map
 
 class SimpleRegressionPredictor(Predictor):
-    def __init__(self, data_container, mtc_num = 120, fbt_num = 15):
+    def __init__(self, data_container, mtc_num = 180, fbt_num = 15):
         Predictor.__init__(self, data_container)
         self.purchase_model = svm.SVR()
         self.redeem_model = svm.SVR()
+        #self.purchase_model = WCMultilayerPerceptron()
+        #self.redeem_model = WCMultilayerPerceptron()
         self.feature_back_trace_day_num = fbt_num
         self.max_train_case_num = mtc_num
 
@@ -128,8 +145,9 @@ class SimpleRegressionPredictor(Predictor):
         feature_date = feature_begin_date
         i = 0
         while i < self.feature_back_trace_day_num:
-            feature_list.append(self.data.purchase_redeem_map[feature_date][0])#purchase value
-            feature_list.append(self.data.purchase_redeem_map[feature_date][1])#redeem value
+            feature_list.append(get_week(feature_date))
+            feature_list.append(self.math_log(self.data.purchase_redeem_map[feature_date][0]))#purchase value
+            feature_list.append(self.math_log(self.data.purchase_redeem_map[feature_date][1]))#redeem value
             #for k in range(1, 3):
             #    feature_list.append(self.data.taobao_day_map[feature_date][k])
             #for k in range(1, 9):
@@ -151,7 +169,7 @@ class SimpleRegressionPredictor(Predictor):
             feature_list = self.build_feature(date_str)
             if not feature_list:
                 break
-            train_y.append(self.data.purchase_redeem_map[date_str][index])
+            train_y.append(self.math_log(self.data.purchase_redeem_map[date_str][index]))
             train_x_map[date_str] = feature_list
             train_case_count += 1
             if train_case_count >= self.max_train_case_num:
@@ -173,13 +191,13 @@ class SimpleRegressionPredictor(Predictor):
         feature_list = self.build_feature(begin_date)
         while predict_date != end_date:
             predict_map[predict_date] = [0, 0]
-            predict_map[predict_date][0] = int(self.purchase_model.predict(feature_list))
-            predict_map[predict_date][1] = int(self.redeem_model.predict(feature_list))
+            predict_map[predict_date][0] = int(self.math_exp(self.purchase_model.predict(feature_list)))
+            predict_map[predict_date][1] = int(self.math_exp(self.redeem_model.predict(feature_list)))
             #update feature for next date
             feature_list.pop(1)
             feature_list.pop(0)
-            feature_list.append(predict_map[predict_date][0])
-            feature_list.append(predict_map[predict_date][1])
+            feature_list.append(self.math_log(predict_map[predict_date][0]))
+            feature_list.append(self.math_log(predict_map[predict_date][1]))
             predict_date = add_day(predict_date)
         return predict_map
 
@@ -213,6 +231,7 @@ class EqualFeatureRegressionPredictor(Predictor):
         feature_date = feature_begin_date
         i = 0
         while i < self.feature_back_trace_day_num:
+            feature_list.append(get_week(feature_date))
             feature_list.append(self.math_log(self.data.purchase_redeem_map[feature_date][0]))#purchase value
             feature_list.append(self.math_log(self.data.purchase_redeem_map[feature_date][1]))#redeem value
             taobao_list = self.get_map_feature_latest(self.data.taobao_day_map, feature_date)
@@ -296,6 +315,8 @@ class FrequencyRegressionPredictor(Predictor):
         #self.redeem_model_list = [Lasso(alpha=a2) for i in xrange(MAX_PREDICT_DAY_NUM)]
         self.purchase_model_list = [svm.SVR() for i in xrange(MAX_PREDICT_DAY_NUM)]
         self.redeem_model_list = [svm.SVR() for i in xrange(MAX_PREDICT_DAY_NUM)]
+        #self.purchase_model_list = [WCMultilayerPerceptron() for i in xrange(MAX_PREDICT_DAY_NUM)]
+        #self.redeem_model_list = [WCMultilayerPerceptron() for i in xrange(MAX_PREDICT_DAY_NUM)]
         self.feature_back_trace_day_num = fbt_num
         self.max_train_case_num = mtc_num
         self.max_fft_day_num = fft_num
@@ -344,6 +365,8 @@ class FrequencyRegressionPredictor(Predictor):
         feature_date = feature_begin_date
         i = 0
         while i < self.feature_back_trace_day_num:
+            feature_list.append(get_week(feature_date))
+            #feature_list.append(get_month_day(feature_date) / 30.0)
             feature_list.append(self.math_log(self.data.purchase_redeem_map[feature_date][0]))#purchase value
             feature_list.append(self.math_log(self.data.purchase_redeem_map[feature_date][1]))#redeem value
             taobao_list = self.get_map_feature_latest(self.data.taobao_day_map, feature_date)
