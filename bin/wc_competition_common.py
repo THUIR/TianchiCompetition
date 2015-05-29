@@ -176,8 +176,16 @@ def get_map_feature_latest(m, date_str):
                 break
         return None
 
+
 def math_log(x):
         return math.log10(1.0 + x)
 
+
 def math_exp(x):
         return (10.0 ** x) - 1.0
+
+
+def safe_float(x):
+    if x == "":
+        x = "0"
+    return float(x)

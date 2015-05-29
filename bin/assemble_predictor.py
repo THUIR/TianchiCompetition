@@ -4,6 +4,8 @@ from money_flow_predictor import *
 
 from pycast_predictor import ExponentialSmoothingPredictor,HoltMethodPredictor,HoltWintersPredictor
 
+from user_based_predictor import UniformUserSumPredictor
+
 class SimpleAssemblePredictor(Predictor):
     def __init__(self, data_container, assemble_case_num = 90):
         Predictor.__init__(self, data_container)
