@@ -6,7 +6,7 @@ from money_flow_predictor import *
 ZERO_USER_ITEM = UserDayItem(-1, "20010101","0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0")
 
 class UniformUserSumPredictor(Predictor):
-    def __init__(self, data_container, mtc_num = 180, fbt_num = 21):
+    def __init__(self, data_container, mtc_num = 60, fbt_num = 21):
         Predictor.__init__(self, data_container)
         self.feature_back_trace_day_num = fbt_num
         self.max_train_case_num = mtc_num
@@ -70,6 +70,7 @@ class UniformUserSumPredictor(Predictor):
                 feature_list = self.build_feature_for_user(uid, date_str)
                 user_date_feature_map[uid][date_str] = feature_list
             train_case_count += 1
+            print "train_case_count: " + str(train_case_count)
             if train_case_count >= self.max_train_case_num:
                 break
         for model_index in range(0, MAX_PREDICT_DAY_NUM):
