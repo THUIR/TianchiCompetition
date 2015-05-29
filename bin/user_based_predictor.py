@@ -93,9 +93,9 @@ class UniformUserSumPredictor(Predictor):
                     if self.is_valid_user_item_date(uid, t_date):
                         train_x_list.append(use_feature)
                         if index == 0:
-                            train_y.append(self.math_log(self.data.user_action_map[uid][t_date].total_purchase_amt))
+                            train_y.append(self.math_log(safe_float(self.data.user_action_map[uid][t_date].total_purchase_amt)))
                         else:
-                            train_y.append(self.math_log(self.data.user_action_map[uid][t_date].total_redeem_amt))
+                            train_y.append(self.math_log(safe_float(self.data.user_action_map[uid][t_date].total_redeem_amt)))
             model_list[model_index].fit(train_x_list, train_y)
 
     def predict(self, begin_date_str, end_date_str):

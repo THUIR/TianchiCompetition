@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="data_analysis.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data_analysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/data_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1050">
-              <caret line="42" column="105" selection-start-line="42" selection-start-column="105" selection-end-line="42" selection-end-column="105" />
+            <state vertical-scroll-proportion="0.825" vertical-offset="540" max-vertical-offset="1035">
+              <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
               <folding>
                 <element signature="e#25#60#0" expanded="true" />
               </folding>
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_based_predictor.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_based_predictor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/user_based_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37" vertical-offset="932" max-vertical-offset="2025">
-              <caret line="72" column="57" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2025">
+              <caret line="98" column="62" selection-start-line="98" selection-start-column="62" selection-end-line="98" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -100,9 +100,9 @@
         <option value="$PROJECT_DIR$/bin/wc_ml_model.py" />
         <option value="$PROJECT_DIR$/bin/money_flow_predictor.py" />
         <option value="$PROJECT_DIR$/bin/assemble_predictor.py" />
-        <option value="$PROJECT_DIR$/bin/data_analysis.py" />
         <option value="$PROJECT_DIR$/bin/wc_competition_common.py" />
         <option value="$PROJECT_DIR$/bin/user_based_predictor.py" />
+        <option value="$PROJECT_DIR$/bin/data_analysis.py" />
       </list>
     </option>
   </component>
@@ -904,21 +904,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/data_analysis.py">
+    <entry file="file://$PROJECT_DIR$/bin/user_based_predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1050">
-          <caret line="42" column="105" selection-start-line="42" selection-start-column="105" selection-end-line="42" selection-end-column="105" />
-          <folding>
-            <element signature="e#25#60#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2025">
+          <caret line="98" column="62" selection-start-line="98" selection-start-column="62" selection-end-line="98" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/user_based_predictor.py">
+    <entry file="file://$PROJECT_DIR$/bin/data_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37" vertical-offset="932" max-vertical-offset="2025">
-          <caret line="72" column="57" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
-          <folding />
+        <state vertical-scroll-proportion="0.825" vertical-offset="540" max-vertical-offset="1035">
+          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+          <folding>
+            <element signature="e#25#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
