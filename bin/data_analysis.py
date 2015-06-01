@@ -51,11 +51,11 @@ if __name__ == '__main__':
         #wc_test_model(data_container, "SimpleRegressionPredictor", test_begin_date, day_length)
         #wc_test_model(data_container, "EqualFeatureRegressionPredictor", test_begin_date, day_length, data_dir + "/test_efr_" + test_begin_date +".txt")
         #wc_test_model(data_container, "SimpleAssemblePredictor", test_begin_date, day_length, data_dir + "/test_sa_w_" + test_begin_date +".txt")
-        #wc_test_model(data_container, "FrequencyRegressionPredictor", test_begin_date, day_length, data_dir + "/test_frp_m_" + test_begin_date +".txt")
+        wc_test_model(data_container, "FrequencyRegressionPredictor", test_begin_date, day_length, data_dir + "/test_frp_m_" + test_begin_date +".txt")
         #wc_test_model(data_container, "ExponentialSmoothingPredictor", test_begin_date, day_length, data_dir + "/test_esp_e_" + test_begin_date +".txt")
         #wc_test_model(data_container, "HoltMethodPredictor", test_begin_date, day_length, data_dir + "/test_hmp_mape_" + test_begin_date +".txt")
         #wc_test_model(data_container, "HoltWintersPredictor", test_begin_date, day_length, data_dir + "/test_hwp_i" + test_begin_date +".txt")
-        wc_test_model(data_container, "UniformUserSumPredictor", test_begin_date, day_length, data_dir + "/test_uusp_" + test_begin_date +".txt")
+        #wc_test_model(data_container, "UniformUserSumPredictor", test_begin_date, day_length, data_dir + "/test_uusp_" + test_begin_date +".txt")
         test_begin_date = add_month(test_begin_date, -1)
 
     use_predict_begin_date = "20140901"

@@ -27,8 +27,8 @@
       <file leaf-file-name="data_analysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/data_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.825" vertical-offset="540" max-vertical-offset="1035">
-              <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.41888618" vertical-offset="622" max-vertical-offset="1035">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding>
                 <element signature="e#25#60#0" expanded="true" />
               </folding>
@@ -51,8 +51,8 @@
       <file leaf-file-name="user_based_predictor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/user_based_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2025">
-              <caret line="98" column="62" selection-start-line="98" selection-start-column="62" selection-end-line="98" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="money_flow_predictor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/money_flow_predictor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6247" max-vertical-offset="6915">
-              <caret line="424" column="4" selection-start-line="424" selection-start-column="4" selection-end-line="454" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="6915">
+              <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
               <folding>
                 <element signature="e#25#43#0" expanded="true" />
               </folding>
@@ -869,17 +869,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="795">
           <caret line="40" column="67" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
           <folding>
-            <element signature="e#26#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/money_flow_predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6247" max-vertical-offset="6915">
-          <caret line="424" column="4" selection-start-line="424" selection-start-column="4" selection-end-line="454" selection-end-column="26" />
-          <folding>
-            <element signature="e#25#43#0" expanded="true" />
+            <element signature="e#26#47#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -906,16 +896,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/user_based_predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2025">
-          <caret line="98" column="62" selection-start-line="98" selection-start-column="62" selection-end-line="98" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/money_flow_predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="6915">
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+          <folding>
+            <element signature="e#25#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/data_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.825" vertical-offset="540" max-vertical-offset="1035">
-          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.41888618" vertical-offset="622" max-vertical-offset="1035">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
           <folding>
             <element signature="e#25#60#0" expanded="true" />
           </folding>
